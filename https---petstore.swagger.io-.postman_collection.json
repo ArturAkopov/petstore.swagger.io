@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "309dc80b-ca73-4aaf-a167-ef98d5d69c12",
+		"name": "https://petstore.swagger.io/",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20882335"
+	},
+	"item": [
+		{
+			"name": "Регистрация пользователя",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"username\": \"King\",\r\n  \"firstName\": \"Artur\",\r\n  \"lastName\": \"Pendragon\",\r\n  \"email\": \"King@mail.ru\",\r\n  \"password\": \"Artur\",\r\n  \"phone\": \"89999999999\",\r\n  \"userStatus\": 0\r\n}"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Вход пользователя в систему",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/login?username=King&password=Artur&accept=application/json",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "King"
+						},
+						{
+							"key": "password",
+							"value": "Artur"
+						},
+						{
+							"key": "accept",
+							"value": "application/json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Найти пользователя по имени",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/King",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"King"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "King",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "Artur",
+							"disabled": true
+						},
+						{
+							"key": "accept",
+							"value": "application/json",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Заказать домашнее животное",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 0,\r\n  \"petId\": 0,\r\n  \"quantity\": 0,\r\n  \"shipDate\": \"2023-03-26T14:44:07.217Z\",\r\n  \"status\": \"placed\",\r\n  \"complete\": true\r\n}"
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Посмотреть заказ по ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/order/9223372036854594498",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"order",
+						"9223372036854594498"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Состояние инвентаря в магазине",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api_key",
+						"value": "1",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/store/inventory",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"store",
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
